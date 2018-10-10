@@ -13,5 +13,7 @@ all:
               ansible_host: 172.16.1.13
         ios_switches:
           hosts:
-            sw1:
-            sw2:
+            iosvl2-1:
+              ansible_host: 172.16.1.14
+            iosvl2-2:
+              ansible_host: 172.16.1.15

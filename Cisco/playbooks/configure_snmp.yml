@@ -1,5 +1,5 @@
 ---
-- hosts: ios_routers
+- hosts: ios
   gather_facts: false
 
   tasks:

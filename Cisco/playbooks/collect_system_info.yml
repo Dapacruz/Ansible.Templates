@@ -1,0 +1,25 @@
+---
+- hosts: ios
+  gather_facts: true
+
+  tasks:
+  - name: Collect Version Info
+    ios_command:
+      commands: show version
+    register: version_info
+
+  - name: Save Version Info to a File
+    copy:
+      content: "### Version Info\n{{ version_info.stdout[0] }}"
+      dest: 'System Info/{{ inventory_hostname }}-{{ ansible_date_time.date }}.txt'
+
+  - name: Collect CDP Info
+    ios_command:
+      commands: show cdp neighbors detail
+    register: cdp_info
+
+  - name: Save CDP Info to a File
+    lineinfile:
+      insertafter: EOF
+      dest: 'System Info/{{ inventory_hostname }}-{{ ansible_date_time.date }}.txt'
+      line: "\n\n### CDP Info\n{{ cdp_info.stdout[0] }}"
