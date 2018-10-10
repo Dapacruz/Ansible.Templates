@@ -23,3 +23,14 @@
       insertafter: EOF
       dest: 'System Info/{{ inventory_hostname }}-{{ ansible_date_time.date }}.txt'
       line: "\n\n### CDP Info\n{{ cdp_info.stdout[0] }}"
+
+  - name: Collect VLAN Info
+    ios_command:
+      commands: show vlans
+    register: vlan_info
+
+  - name: Save VLAN Info to a File
+    lineinfile:
+      insertafter: EOF
+      dest: 'System Info/{{ inventory_hostname }}-{{ ansible_date_time.date }}.txt'
+      line: "\n\n### VLAN Info\n{{ vlan_info.stdout[0] }}"
