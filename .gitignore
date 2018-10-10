@@ -2,5 +2,7 @@
 **/.vagrant
 **/ansible-vagrant-examples
 **/Config Backups/*
+**/Config Snapshots/*
+**/System Info/*
 
 !**/.gitkeep
