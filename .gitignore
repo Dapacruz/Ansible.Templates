@@ -1,3 +1,6 @@
 .DS_Store
 **/.vagrant
 **/ansible-vagrant-examples
+**/Config Backups/*
+
+!**/.gitkeep
