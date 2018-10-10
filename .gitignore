@@ -1,5 +1,5 @@
 .DS_Store
 **/.vagrant
 **/ansible-vagrant-examples
-**/Config Backups
-**/Config Snapshots
+**/Config Backups/*.txt
+**/Config Snapshots/*.txt
