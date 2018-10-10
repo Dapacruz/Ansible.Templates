@@ -1,0 +1,14 @@
+---
+- hosts: ios_routers
+  gather_facts: false
+
+  tasks:
+  - name: Gather CDP Info
+    ios_command:
+      commands:
+        - show cdp neighbors detail
+    register: cdp_info
+
+  - name: Show CDP Info
+    debug:
+      var: cdp_info.stdout_lines[0]

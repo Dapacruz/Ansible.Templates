@@ -1,0 +1,8 @@
+# Not working with Windows 10
+---
+- name: change power plan
+  hosts: all
+  tasks:
+    - name: change power plan to high performance
+      win_power_plan:
+        name: high performance

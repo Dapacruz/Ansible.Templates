@@ -1,0 +1,10 @@
+---
+- hosts: ios_routers
+  gather_facts: false
+
+  tasks:
+  - name: Configure SNMP
+    ios_config:
+      commands:
+        - snmp-server community cruznet RO
+        - ip name-server vrf Mgmt-intf 172.16.1.1

@@ -1,0 +1,15 @@
+---
+- hosts: ios_routers
+  gather_facts: true
+
+  tasks:
+  - name: Backup Running Configuration
+    ios_command:
+      commands:
+        - show running-config
+    register: running_config
+
+  - name: Save Running Configuration to File
+    copy:
+      content: '{{ running_config.stdout[0] }}'
+      dest: 'Config Snapshots/{{ inventory_hostname }}-{{ ansible_date_time.date }}.{{ ansible_date_time.time }}.txt'

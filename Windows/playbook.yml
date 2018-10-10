@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+  - name: Install Firefox
+    win_chocolatey:
+      name: firefox
+      state: present
+  - name: Disable firewall
+    win_firewall:
+      state: disabled
+      profiles:
+      - Domain
+      - Private
+      - Public
+
+  roles:
+  - name: Enable Remote Desktop
+    role: mrlesmithjr.windows-remote-desktop

@@ -1,0 +1,17 @@
+---
+all:
+  children:
+    ios:
+      children:
+        ios_routers:
+          hosts:
+            iosv-1:
+              ansible_host: 172.16.1.11
+            iosv-2:
+              ansible_host: 172.16.1.12
+            iosv-3:
+              ansible_host: 172.16.1.13
+        ios_switches:
+          hosts:
+            sw1:
+            sw2:
