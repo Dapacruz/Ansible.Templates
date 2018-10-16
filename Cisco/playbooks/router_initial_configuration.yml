@@ -1,6 +1,9 @@
 ---
-- name: Generate Router Initial Configuration Files
-  hosts: localhost
+- hosts: ios_routers
+  gather_facts: false
 
-  roles:
-    - router_initial_configuration
+  tasks:
+  - name: Generate Configuration Files
+    template:
+      src: ../templates/initial_configuration.j2
+      dest: 'Generated Configurations/{{ hostname }}.txt'
