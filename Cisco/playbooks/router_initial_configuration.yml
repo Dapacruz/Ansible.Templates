@@ -1,0 +1,6 @@
+---
+- name: Generate Router Initial Configuration Files
+  hosts: localhost
+
+  roles:
+    - router_initial_configuration

@@ -1,0 +1,13 @@
+---
+routers:
+  - hostname: r1
+    enable_secret: cisco
+    loopback_addr: 1.1.1.1 255.255.255.255
+
+  - hostname: r2
+    enable_secret: cisco
+    loopback_addr: 2.2.2.2 255.255.255.255
+
+  - hostname: r3
+    enable_secret: cisco
+    loopback_addr: 3.3.3.3 255.255.255.255

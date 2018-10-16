@@ -1,0 +1,6 @@
+hostname {{ item.hostname }}
+!
+enable secret {{ item.enable_secret }}
+!
+interface loopback0
+ ip address {{ item.loopback_addr }}
