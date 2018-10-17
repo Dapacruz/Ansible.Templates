@@ -1,2 +1,5 @@
 ansible_connection: network_cli
 ansible_network_os: ios
+ntp_servers:
+  - 10.10.10.10
+  - 11.11.11.11

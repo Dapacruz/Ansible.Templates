@@ -1,4 +1,3 @@
 ---
 hostname: r3
-enable_secret: cisco
 loopback_addr: 3.3.3.3 255.255.255.255

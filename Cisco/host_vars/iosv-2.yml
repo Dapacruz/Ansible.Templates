@@ -1,4 +1,3 @@
 ---
 hostname: r2
-enable_secret: cisco
 loopback_addr: 2.2.2.2 255.255.255.255
