@@ -1,6 +1,27 @@
+service timestamps debug datetime localtime
+service timestamps log datetime localtime
+service password-encryption
+!
 hostname {{ hostname }}
 !
 enable secret {{ vault_enable_secret }}
+!
+username {{ admin_user }} privilege 15 secret {{ vault_admin_password }}
+!
+aaa new-model
+aaa authentication login default local group radius
+!
+clock timezone PST -8 0
+clock summer-time PDT recurring
+!
+ip domain-name {{ domain_name }}
+!
+ip ssh version 2
+!
+no ip http server
+no ip http secure-server
+!
+ip route 0.0.0.0 0.0.0.0 {{ gateway_of_last_resort }}
 !
 interface loopback0
  ip address {{ loopback_addr }}
@@ -8,3 +29,29 @@ interface loopback0
 {% for item in ntp_servers %}
 ntp server {{ item }}
 {% endfor %}
+!
+logging trap debugging
+logging source-interface {{ logging_source_interface }}
+logging host {{ logging_host }}
+!
+{% for item in snmp %}
+snmp-server community {{ item.community }} {{ item.privilege }}
+{% endfor %}
+!
+{% for item in radius_hosts %}
+radius-server host {{ item }} key {{ vault_radius_key }}
+{% endfor %}
+!
+line con 0
+ exec-timeout 30 0
+ logging synchronous
+!
+line aux 0
+ exec-timeout 30 0
+ logging synchronous
+!
+line vty 0 15
+ exec-timeout 30 0
+ logging synchronous
+ transport input ssh
+!
