@@ -5,5 +5,5 @@
   tasks:
   - name: Generate Configuration Files
     template:
-      src: ../templates/initial_configuration.j2
+      src: ../templates/router_initial_configuration.j2
       dest: 'Generated Configurations/{{ hostname }}.txt'
