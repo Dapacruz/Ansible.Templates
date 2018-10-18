@@ -1,0 +1,5 @@
+---
+all:
+  hosts:
+    vcenter:
+      ansible_host: 172.31.1.32
