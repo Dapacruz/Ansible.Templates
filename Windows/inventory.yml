@@ -1,6 +1,4 @@
 ---
 all:
-  children:
-    windows:
-      hosts:
-        jumper.cruz.net
+  hosts:
+    jumper.cruz.net:
