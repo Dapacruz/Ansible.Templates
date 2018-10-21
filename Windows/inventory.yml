@@ -1,0 +1,7 @@
+---
+all:
+  children:
+    windows:
+      hosts:
+        jumper.cruz.net:
+          ansible_host: 172.31.1.24

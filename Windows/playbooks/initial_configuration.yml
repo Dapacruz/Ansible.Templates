@@ -13,6 +13,6 @@
       - Private
       - Public
 
-  roles:
-  - name: Enable Remote Desktop
-    role: mrlesmithjr.windows-remote-desktop
+  # roles:
+  # - name: Enable Remote Desktop
+  #   role: mrlesmithjr.windows-remote-desktop
