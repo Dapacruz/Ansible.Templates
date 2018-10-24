@@ -3,3 +3,4 @@ validate_certs: no
 vcenter_hostname: vcenter.cruz.net
 vcenter_username: administrator@vsphere.local
 vcenter_password: '{{ vault_vcenter_password }}'
+datacenter: Datacenter

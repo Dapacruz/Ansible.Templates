@@ -1,4 +1,8 @@
 ---
 all:
   hosts:
-    vcenter.cruz.net:
+    Jumper:
+    Plex:
+    vCSA:
+    GNS3 VM:
+    Cisco VIRL 1.5:

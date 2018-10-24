@@ -9,8 +9,8 @@
       username: '{{ vcenter_username}}'
       password: '{{ vcenter_password }}'
       validate_certs: '{{ validate_certs }}'
-      name: '{{ ansible_host }}'
-      datacenter: Datacenter
+      name: '{{ inventory_hostname }}'
+      datacenter: '{{ datacenter }}'
     delegate_to: localhost
     register: facts
 
