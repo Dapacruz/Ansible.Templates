@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: all
   gather_facts: false
 
   tasks:
@@ -9,8 +9,9 @@
       username: '{{ vcenter_username}}'
       password: '{{ vcenter_password }}'
       validate_certs: '{{ validate_certs }}'
-      name: Jumper
+      name: '{{ ansible_host }}'
       datacenter: Datacenter
+    delegate_to: localhost
     register: facts
 
   - name: Display results
