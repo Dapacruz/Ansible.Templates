@@ -1,8 +1,6 @@
 ---
 all:
-  hosts:
-    Jumper:
-    Plex:
-    vCSA:
-    GNS3 VM:
-    Cisco VIRL 1.5:
+  children:
+    virtual_machines:
+      hosts:
+        Jumper:
